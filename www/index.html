@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>iBeacons</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="cordova.js"></script>
+    <script src="Chart.js"></script>
+    <script src="libs/evothings/util/util.js"></script>
+
+</head>
+
+<body>
+    <div data-role="page" id="first" data-theme="a">
+        <div data-role="header">
+            <h1>iBeacons scanner</h1>
+        </div>
+        <button id="scanButton"></button>
+        <div data-role="content">
+            <ul data-role="listview" id="deviceList"></ul>
+            <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+        </div>
+        <!-- /content -->
+    </div>
+    <!-- /page #first -->
+    <div data-role="page" id="connected" data-theme="a">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Informations</h1>
+        </div>
+        <div data-role="content">
+            <!-- <button id="readFile">Read</button> -->
+            <div id="deviceName"></div>
+            <div id="iBeacon"></div>
+            <div id="Eddystone"></div>
+            <div id="chart" style="background-color: #F1F1F1"></div>
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="button" data-inline="true" id="shareFile" value="Share File">
+                </div>
+                <div class="ui-block-b">
+                    <input type="button" data-inline="true" id="saveGraph" value="Share Graph">
+                </div>
+            </fieldset>
+
+            <div class="ui-grid-c">
+                <div class="ui-block-a">Point</div>
+                <div class="ui-block-b">x</div>
+                <div class="ui-block-c">y</div>
+                <div class="ui-block-d">d</div>
+                <!-- <div class="ui-block-e"></div> -->
+                <div class="ui-block-a">1</div>
+                <div class="ui-block-b" id="p1x"></div>
+                <div class="ui-block-c" id="p1y"></div>
+                <!-- <div class="ui-block-d" id="p1d"></div> -->
+                <div class="ui-block-d">
+                    <button class="ui-btn ui-btn-inline" id="get-p1-btn">Get</button>
+                </div>
+                <div class="ui-block-a">2</div>
+                <div class="ui-block-b" id="p2x"></div>
+                <div class="ui-block-c" id="p2y"></div>
+                <!-- <div class="ui-block-d" id="p2d"></div> -->
+                <div class="ui-block-d">
+                    <button class="ui-btn ui-btn-inline" id="get-p2-btn">Get</button>
+                </div>
+                <div class="ui-block-a">3</div>
+                <div class="ui-block-b" id="p3x"></div>
+                <div class="ui-block-c" id="p3y"></div>
+                <!-- <div class="ui-block-d" id="p3d"></div> -->
+                <div class="ui-block-d">
+                    <button class="ui-btn ui-btn-inline" id="get-p3-btn">Get</button>
+                </div>
+            </div>
+
+            <button class="ui-btn ui-btn-inline" id="get-beacon-position"><a href="#map" data-transition=\"flip\">Get position</a></button>
+
+        </div>
+    </div>
+
+    <div data-role="page" id="map" data-theme="a">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Map</h1>
+        </div>
+        <div style="width:100%;height:400px" id="map_canvas">
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
